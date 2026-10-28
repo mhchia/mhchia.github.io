@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kevin (Mai-Hsuan) Chia</title>
+<meta name="description" content="Kevin (Mai-Hsuan) Chia, software engineer in Taipei. Blockchain, applied cryptography, systems and networking.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mhchia.com/">
+<meta property="og:title" content="Kevin (Mai-Hsuan) Chia">
+<meta property="og:description" content="Kevin (Mai-Hsuan) Chia, software engineer in Taipei. Blockchain, applied cryptography, systems and networking.">
+<meta property="og:image" content="https://mhchia.com/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="627">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231a4fa0'/%3E%3Ctext x='32' y='43' font-family='Helvetica,Arial,sans-serif' font-size='30' font-weight='700' fill='%23fff' text-anchor='middle'%3EKC%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #fbfbfa;
+    --card: #ffffff;
+    --fg: #1a1a1a;
+    --muted: #666666;
+    --rule: #e4e4e1;
+    --link: #1a4fa0;
+    --accent: #1a4fa0;
+    --accent-soft: #e8eef8;
+    --chip: #f1f1ef;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #121212;
+      --card: #1a1a1a;
+      --fg: #e8e8e8;
+      --muted: #9a9a9a;
+      --rule: #2e2e2e;
+      --link: #8ab4f8;
+      --accent: #8ab4f8;
+      --accent-soft: #1c2a40;
+      --chip: #262626;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "PingFang TC", "Noto Sans TC", Arial, sans-serif;
+  }
+  main { max-width: 860px; margin: 0 auto; padding: 56px 20px 64px; }
+  a { color: var(--link); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  ul { margin: 0; padding: 0; }
+
+  /* Header */
+  h1 { font-size: 2rem; margin: 0 0 2px; letter-spacing: -0.02em; line-height: 1.2; }
+  .tagline { color: var(--muted); margin: 0 0 16px; }
+  .about { margin: 0 0 16px; max-width: 68ch; }
+  .links { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+  .links a {
+    display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border: 1px solid var(--rule);
+    border-radius: 999px; font-size: 0.88rem; background: var(--card);
+  }
+  .links a:hover { border-color: var(--accent); text-decoration: none; }
+  .links .ico { width: 14px; height: 14px; flex: none; }
+
+  /* Tabs */
+  .tabs {
+    position: sticky; top: 0; z-index: 1;
+    display: flex; gap: 4px; overflow-x: auto; overflow-y: hidden;
+    margin: 40px 0 28px; padding-top: 8px;
+    background: var(--bg); box-shadow: inset 0 -1px 0 var(--rule);
+  }
+  .tabs button {
+    flex: none; font: inherit; font-size: 0.95rem; font-weight: 600;
+    color: var(--muted); background: none; border: 0; cursor: pointer;
+    padding: 10px 14px; border-bottom: 2px solid transparent;
+  }
+  .tabs button:hover { color: var(--fg); }
+  .tabs button[aria-selected="true"] { color: var(--accent); border-bottom-color: var(--accent); }
+  .tabs button:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; border-radius: 4px; }
+  [role="tabpanel"] { scroll-margin-top: 64px; }
+  .no-js .tabs { display: none; }
+  .no-js [role="tabpanel"] > h2 { display: block; }
+  [role="tabpanel"] > h2 {
+    display: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em;
+    color: var(--muted); margin: 48px 0 16px;
+  }
+
+  /* Experience timeline */
+  .timeline { list-style: none; }
+  .job { display: grid; grid-template-columns: 150px 1fr; gap: 0 24px; }
+  .job .when {
+    color: var(--muted); font-size: 0.85rem; text-align: right; white-space: nowrap;
+    padding-top: 20px; font-variant-numeric: tabular-nums;
+  }
+  .job .body { position: relative; padding: 0 0 28px 28px; border-left: 2px solid var(--rule); }
+  .job:last-child .body { padding-bottom: 0; }
+  .job .body::before {
+    content: ""; position: absolute; left: -7px; top: 24px;
+    width: 12px; height: 12px; border-radius: 50%;
+    background: var(--bg); border: 2px solid var(--accent);
+  }
+  .card {
+    background: var(--card); border: 1px solid var(--rule); border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .card h3 { font-size: 1.08rem; margin: 0; line-height: 1.35; }
+  .card .role { color: var(--accent); font-weight: 600; font-size: 0.92rem; margin: 2px 0 0; }
+  .card .what { color: var(--muted); font-size: 0.92rem; margin: 8px 0 0; }
+  .card ul.points { margin: 12px 0 0; padding-left: 1.1em; }
+  .card ul.points li { margin: 0 0 6px; }
+  .card ul.points li:last-child { margin-bottom: 0; }
+  .card ul.points ul { margin: 6px 0 0; padding-left: 1.1em; }
+  .when-inline { display: none; }
+  .badge {
+    display: inline-block; vertical-align: 2px; margin-left: 6px; padding: 1px 8px;
+    font-size: 0.72rem; font-weight: 600; border-radius: 999px;
+    background: var(--accent-soft); color: var(--accent);
+  }
+
+  .chips { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; margin-top: 14px; }
+  .chips li { font-size: 0.8rem; padding: 2px 10px; border-radius: 999px; background: var(--chip); color: var(--muted); }
+  .chips.proj li { background: var(--accent-soft); }
+  .chips.proj li a { color: var(--accent); }
+
+  /* Talks */
+  .year { font-size: 0.85rem; color: var(--muted); font-weight: 600; margin: 28px 0 10px; font-variant-numeric: tabular-nums; }
+  .year:first-of-type { margin-top: 0; }
+  .talks { list-style: none; display: grid; gap: 10px; }
+  .talks .card { padding: 14px 18px; }
+  .talks h3 { font-size: 1rem; }
+  .talks .venue { color: var(--muted); font-size: 0.9rem; margin: 4px 0 0; }
+  .talks .row { display: flex; flex-wrap: wrap; align-items: center; gap: 6px 12px; margin-top: 8px; font-size: 0.88rem; }
+  .lang { font-size: 0.75rem; padding: 1px 8px; border-radius: 4px; border: 1px solid var(--rule); color: var(--muted); }
+
+  /* Skills & Education */
+  .section-title { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0 0 14px; }
+  .skills { display: grid; gap: 14px; margin-bottom: 40px; }
+  .skill { display: grid; grid-template-columns: 170px 1fr; gap: 12px; align-items: baseline; }
+  .skill h3 { font-size: 0.95rem; margin: 0; }
+  .skill .chips { margin: 0; }
+  .edu { list-style: none; display: grid; gap: 12px; }
+  .edu .what + .role { margin-top: 14px; }
+
+  footer { margin-top: 56px; padding-top: 14px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.85rem; }
+
+  @media (max-width: 600px) {
+    main { padding-top: 36px; }
+    h1 { font-size: 1.6rem; }
+    .tabs { gap: 0; }
+    .tabs button { padding: 10px 9px; font-size: 0.88rem; }
+    .job { grid-template-columns: 1fr; }
+    .job .when { display: none; }
+    .job .body { padding-left: 20px; }
+    .when-inline { display: block; color: var(--muted); font-size: 0.82rem; margin-bottom: 2px; }
+    .skill { grid-template-columns: 1fr; gap: 6px; }
+  }
+</style>
+</head>
+<body class="no-js">
+<main>
+
+  <header>
+    <h1>Kevin (Mai-Hsuan) Chia</h1>
+    <p class="tagline">Software Engineer · Taipei, Taiwan</p>
+    <p class="about">Software engineer focused on blockchain, applied cryptography, and systems &amp; networking. 8+ years of experience, including 6 years in total at the Ethereum Foundation (Ethereum 2.0 P2P networking, then ZK / MPC), plus XY Finance (correctness-critical backend and transaction systems handling real customer funds) and Lawskey (leading engineering as CTO).</p>
+    <ul class="links">
+      <li><a href="https://github.com/mhchia"><svg class="ico" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>GitHub</a></li>
+      <li><a href="https://linkedin.com/in/mhchia"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a></li>
+      <li><a href="https://x.com/kevinchia0907"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>X</a></li>
+      <li><a id="email" data-user="kevin.mh.chia" data-domain="gmail.com"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 5h18v14H3z"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M3 6l9 7 9-7"/></svg><span>kevin.mh.chia [at] gmail.com</span></a></li>
+    </ul>
+  </header>
+
+  <nav class="tabs" role="tablist" aria-label="Sections">
+    <button role="tab" id="tab-experience" aria-controls="experience" aria-selected="true">Experience</button>
+    <button role="tab" id="tab-talks" aria-controls="talks" aria-selected="false" tabindex="-1">Talks</button>
+    <button role="tab" id="tab-skills" aria-controls="skills" aria-selected="false" tabindex="-1">Skills &amp; Education</button>
+  </nav>
+
+  <!-- Experience -->
+  <section id="experience" role="tabpanel" aria-labelledby="tab-experience">
+    <h2>Experience</h2>
+    <ol class="timeline">
+
+      <li class="job">
+        <div class="when">Apr – Jun 2026</div>
+        <div class="body"><div class="card">
+          <span class="when-inline">Apr – Jun 2026</span>
+          <h3><a href="https://github.com/coset-io/baby-lattice-folding">SALSAA (baby-lattice-folding)</a> <span class="badge">Open source</span></h3>
+          <p class="role">Implementer</p>
+          <p class="what">Open-source Rust implementation of SALSAA, a post-quantum, lattice-based folding scheme for zero-knowledge proof systems.</p>
+          <ul class="points">
+            <li>Came out of a paper-study group led by a researcher; wrote the entire implementation end to end in Rust with no external cryptography dependencies: field and cyclotomic ring arithmetic, negacyclic NTT, Ajtai commitments, multivariate sum-check, and the full chain of reductions of knowledge.</li>
+            <li>Open source with CI and tests; presented at COSCUP 2026.</li>
+          </ul>
+          <ul class="chips"><li>Rust</li><li>Lattice cryptography</li><li>Sum-check</li><li>NTT</li></ul>
+          <ul class="chips proj"><li><a href="https://github.com/coset-io/baby-lattice-folding">baby-lattice-folding</a></li></ul>
+        </div></div>
+      </li>
+
+      <li class="job">
+        <div class="when">Apr 2025 – Mar 2026</div>
+        <div class="body"><div class="card">
+          <span class="when-inline">Apr 2025 – Mar 2026</span>
+          <h3>Lawskey</h3>
+          <p class="role">Co-founder &amp; CTO · Taipei</p>
+          <p class="what">An AI legal-tech startup: contract review for individuals and contract-lifecycle management for businesses.</p>
+          <ul class="points">
+            <li>Led engineering and launched a B2C AI contract-review product and a B2B contract-lifecycle-management platform; onboarded the first small-business customer and recurring professional users (lawyers, accountants).</li>
+            <li>Designed the backend, data model, and asynchronous LLM review workflow with organization-scoped access control; ran it in production with CI/CD, alerting, rate limiting, and prompt-injection safeguards.</li>
+            <li>Built an LLM evaluation pipeline: LLM-as-judge scoring against a lawyer-co-authored rubric to catch prompt regressions.</li>
+          </ul>
+          <ul class="chips"><li>FastAPI</li><li>PostgreSQL</li><li>GCP Cloud Run</li><li>LLM</li></ul>
+          <ul class="chips proj"><li><a href="https://lawskey.com/">lawskey.com</a></li><li><a href="https://app.lawskey.com/">app.lawskey.com</a></li></ul>
+        </div></div>
+      </li>
+
+      <li class="job">
+        <div class="when">Feb 2023 – Mar 2025</div>
+        <div class="body"><div class="card">
+          <span class="when-inline">Feb 2023 – Mar 2025</span>
+          <h3>Ethereum Foundation · Privacy &amp; Scaling Explorations</h3>
+          <p class="role">Software Engineer · Remote</p>
+          <p class="what">PSE is the Ethereum Foundation team building applied zero-knowledge and multi-party computation tooling.</p>
+          <ul class="points">
+            <li><strong>TLSNotary:</strong> Ported the Rust TLSNotary prover (MPC-TLS / zkTLS: generates a cryptographic proof that data came from a real website; TLSNotary is the original zkTLS protocol) to the browser via WebAssembly, resolving dependencies lacking wasm32 support and integrating a WebSocket-to-TCP proxy so the browser could open TLS sessions; this enabled the TLSNotary Chrome extension published on the Chrome Web Store, shipped with a teammate.</li>
+            <li><strong>MPCStats:</strong> Led a 3-person team building it: TLSNotary verifies where exchange-balance inputs came from, and MP-SPDZ computes aggregate statistics without revealing individual balances; demoed live at Devcon 2024.</li>
+            <li><strong>rlnjs:</strong> Rebuilt rlnjs, the TypeScript SDK for RLN (a rate-limiting protocol for anonymous P2P networks), with a modular, more intuitive API; integrated its ZK circuits and smart contracts, supported both Node.js and browser, and added a test suite. Published on npm.</li>
+          </ul>
+          <ul class="chips"><li>Rust / WASM</li><li>TypeScript</li><li>Python / FastAPI</li><li>MP-SPDZ</li><li>ZK</li></ul>
+          <ul class="chips proj">
+            <li><a href="https://github.com/MPCStats/mpc-demo-infra">MPCStats</a></li>
+            <li><a href="https://github.com/tlsnotary/tlsn-extension">TLSNotary</a></li>
+            <li><a href="https://github.com/Rate-Limiting-Nullifier/rlnjs">rlnjs</a></li>
+          </ul>
+        </div></div>
+      </li>
+
+      <li class="job">
+        <div class="when">Sep 2021 – Jan 2023</div>
+        <div class="body"><div class="card">
+          <span class="when-inline">Sep 2021 – Jan 2023</span>
+          <h3>XY Finance</h3>
+          <p class="role">Blockchain Architect · Taipei</p>
+          <p class="what">A cross-chain bridge and swap aggregator moving user funds across 15+ blockchain networks.</p>
+          <ul class="points">
+            <li>Core engineer on a production cross-chain bridge spanning 15+ blockchain networks with ~$3M average TVL (user funds held by the system): built and maintained the swap engine, backend services, and internal Python libraries; co-designed and implemented the Solidity smart contracts (EVM) for asset custody and cross-chain swap execution.</li>
+            <li>Designed and built a PostgreSQL-backed transaction manager that atomically coordinated nonce allocation and submitted-transaction state using row-level locking, with rollback, state re-validation, and retry handling for transient failures.</li>
+            <li>Handled contract testing, release rehearsals on a mainnet fork, release execution, external security-audit coordination, and logging and alerting (Cloud Logging, Slack); was on the shared weekend on-call rotation.</li>
+          </ul>
+          <ul class="chips"><li>Python</li><li>FastAPI</li><li>PostgreSQL</li><li>Solidity / EVM</li><li>GCP</li><li>Docker</li></ul>
+        </div></div>
+      </li>
+
+      <li class="job">
+        <div class="when">Mar 2020 – Sep 2021</div>
+        <div class="body"><div class="card">
+          <span class="when-inline">Mar 2020 – Sep 2021</span>
+          <h3>Ethereum Foundation · ZKP-Applied</h3>
+          <p class="role">Software Engineer · Remote</p>
+          <p class="what">Ethereum Foundation team building privacy applications on zero-knowledge proofs.</p>
+          <ul class="points">
+            <li><strong>PeekABook:</strong> Built PeekABook, a private order-matching system on a self-implemented SMP protocol (two-party secure computation) built from the specification, running peer-to-peer over WebRTC with smart contracts.</li>
+            <li><strong>BlindFind:</strong> Built BlindFind, a privacy-preserving peer-discovery network on the same SMP protocol, combined with zero-knowledge circuits (circom / Groth16).</li>
+          </ul>
+          <ul class="chips"><li>TypeScript</li><li>circom / Groth16</li><li>Secure two-party computation</li><li>WebRTC</li></ul>
+          <ul class="chips proj">
+            <li><a href="https://github.com/zkopru-network/blind-find">BlindFind</a></li>
+            <li><a href="https://github.com/mhchia/peek-a-book">PeekABook</a></li>
+          </ul>
+        </div></div>
+      </li>
+
+      <li class="job">
+        <div class="when">Nov 2017 – Feb 2020</div>
+        <div class="body"><div class="card">
+          <span class="when-inline">Nov 2017 – Feb 2020</span>
+          <h3>Ethereum Foundation · Research</h3>
+          <p class="role">Software Engineer · Remote</p>
+          <p class="what">Ethereum 2.0 research: sharding and the peer-to-peer networking layer.</p>
+          <ul class="points">
+            <li><strong>Sharding PoC:</strong> Worked on the initial Ethereum sharding proof of concept and sharding-p2p-poc, an early prototype integrating libp2p into Ethereum 2.0.</li>
+            <li><strong>py-libp2p:</strong> Primary maintainer of py-libp2p (now 600+ GitHub stars), the Python P2P stack for the Eth2 client Trinity: re-architected TCP transport, secure-channel negotiation, stream multiplexing, and GossipSub into a tested, spec-aligned stack, and led the asyncio → Trio migration.
+              <ul>
+                <li><strong>p2pclient:</strong> Led the first py-libp2p ↔ go-libp2p interoperability effort, building p2pclient to drive the Go daemon over Protobuf, with CI interop tests.</li>
+                <li><strong>py-multiaddr:</strong> Maintainer of py-multiaddr, the Python multiaddr library used by libp2p: reviewed and merged community contributions and published releases 0.0.8 and 0.0.9.</li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="chips"><li>Python</li><li>Go</li><li>libp2p</li><li>asyncio / Trio</li></ul>
+          <ul class="chips proj">
+            <li><a href="https://github.com/libp2p/py-libp2p">py-libp2p</a></li>
+            <li><a href="https://github.com/mhchia/py-libp2p-daemon-bindings">p2pclient</a></li>
+            <li><a href="https://github.com/multiformats/py-multiaddr">py-multiaddr</a></li>
+            <li><a href="https://github.com/ethereum/trinity-eth2">Trinity</a></li>
+            <li><a href="https://github.com/ethresearch/sharding-p2p-poc">sharding-p2p-poc</a></li>
+            <li><a href="https://github.com/ethereum/sharding">ethereum/sharding</a></li>
+          </ul>
+        </div></div>
+      </li>
+
+    </ol>
+  </section>
+
+  <!-- Talks -->
+  <section id="talks" role="tabpanel" aria-labelledby="tab-talks">
+    <h2>Talks</h2>
+
+    <p class="year">2026</p>
+    <ul class="talks">
+      <li class="card">
+        <h3>Intro to Lattice-based Folding Schemes (Lattice-based Folding Scheme 入門)</h3>
+        <p class="venue">COSCUP 2026</p>
+        <div class="row"><span class="lang">Chinese</span><a href="https://coscup.org/2026/session/FSL3ZL/">Session</a><a href="https://docs.google.com/presentation/d/1798AyOfKiNDzS_ebt3lx5pGMPJHMj4gVQmrRqdZbELE/edit?usp=sharing">Slides</a></div>
+      </li>
+    </ul>
+
+    <p class="year">2025</p>
+    <ul class="talks">
+      <li class="card">
+        <h3>zkPassport</h3>
+        <p class="venue">ETHTaipei × imToken meetup “Email, TLS, and Passport – ZK in Real World”, with Ryan (zkEmail) and CCWang</p>
+        <div class="row"><span class="lang">Chinese</span><a href="https://youtu.be/5Ms9VViJo3Q?t=4464">Recording</a></div>
+      </li>
+      <li class="card">
+        <h3>MPCStats: secure and private analysis of verified data</h3>
+        <p class="venue">ETHTaipei 2025</p>
+        <div class="row"><span class="lang">English</span><a href="https://www.youtube.com/watch?v=8FqDch79XU8">Recording</a></div>
+      </li>
+    </ul>
+
+    <p class="year">2024</p>
+    <ul class="talks">
+      <li class="card">
+        <h3>MPCStats (lightning talk)</h3>
+        <p class="venue">Devcon 7 SEA, Bangkok, with Teeramet (Jern) Kunpittaya</p>
+        <div class="row"><span class="lang">English</span><a href="https://www.youtube.com/watch?v=wCp7Zsjou7w">Recording</a><a href="https://archive.devcon.org/devcon-7/mpcstats/">Archive</a></div>
+      </li>
+      <li class="card">
+        <h3>Intro to MPC and its open-source tools (安全多方運算（MPC）介紹及其開源工具)</h3>
+        <p class="venue">COSCUP 2024</p>
+        <div class="row"><span class="lang">Chinese</span><a href="https://pretalx.coscup.org/coscup-2024/talk/RNJ8QP/">Session</a></div>
+      </li>
+    </ul>
+
+    <p class="year">2023</p>
+    <ul class="talks">
+      <li class="card">
+        <h3>RLN Workshop</h3>
+        <p class="venue">ZK Playground #2, Taiwan</p>
+        <div class="row"><span class="lang">Chinese</span><a href="https://www.youtube.com/watch?v=S71R2aqrxaE">Recording</a></div>
+      </li>
+    </ul>
+
+    <p class="year">2020</p>
+    <ul class="talks">
+      <li class="card">
+        <h3>Advanced blockchain P2P networking (進階區塊鏈 p2p)</h3>
+        <p class="venue">Taipei Ethereum Meetup, Blockchain Fundamentals, Phase 3 #6 (區塊鏈基礎教育 第三階段 #6)</p>
+        <div class="row"><span class="lang">Chinese</span><a href="https://www.youtube.com/watch?v=L-tW1rLPLzM">Recording</a></div>
+      </li>
+    </ul>
+
+    <p class="year">2018</p>
+    <ul class="talks">
+      <li class="card">
+        <h3>P2P Networking in Ethereum 2.0</h3>
+        <p class="venue">Devcon4, Prague, with Jannik Luhn</p>
+        <div class="row"><span class="lang">English</span><a href="https://www.youtube.com/watch?v=rMo67_5gA_s">Recording</a><a href="https://archive.devcon.org/devcon-4/p2p-networking-in-ethereum-20/">Archive</a></div>
+      </li>
+      <li class="card">
+        <h3>Ethereum Sharding Team Presents Their Requirements for Choosing a P2P Library</h3>
+        <p class="venue">libp2p dev meeting</p>
+        <div class="row"><span class="lang">English</span><a href="https://www.youtube.com/watch?v=27Uv8pRmIaY">Recording</a></div>
+      </li>
+      <li class="card">
+        <h3>Sharding P2P networking roundtable</h3>
+        <p class="venue">Ethereum Sharding Meeting #2, Berlin, with Felix Lange, Guillaume Ballet, Lars Gierth</p>
+        <div class="row"><span class="lang">English</span><a href="https://www.youtube.com/watch?v=TLzQe59qX5E">Recording</a></div>
+      </li>
+      <li class="card">
+        <h3>Ethereum and Sharding</h3>
+        <p class="venue">FOSSASIA Summit 2018, Singapore</p>
+        <div class="row"><span class="lang">English</span><a href="https://www.youtube.com/watch?v=5ajVWVzwhXE">Recording</a></div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- Skills & Education -->
+  <section id="skills" role="tabpanel" aria-labelledby="tab-skills">
+    <h2>Skills &amp; Education</h2>
+
+    <p class="section-title">Skills</p>
+    <div class="skills">
+      <div class="skill"><h3>Languages</h3><ul class="chips"><li>Python</li><li>TypeScript / Node.js</li><li>Rust</li><li>Solidity</li><li>Go</li><li>C/C++</li></ul></div>
+      <div class="skill"><h3>Cryptography</h3><ul class="chips"><li>ZK (Groth16, sum-check, lattice-based folding schemes)</li><li>MPC</li><li>circom</li><li>snarkjs</li><li>MP-SPDZ</li><li>TLSNotary (MPC-TLS)</li></ul></div>
+      <div class="skill"><h3>Blockchain</h3><ul class="chips"><li>Solidity / EVM</li><li>Hardhat</li><li>Brownie</li><li>web3.py</li><li>Cross-chain bridges</li><li>Secureum bootcamp (Certora, Sherlock tracks)</li></ul></div>
+      <div class="skill"><h3>Backend &amp; Systems</h3><ul class="chips"><li>FastAPI</li><li>PostgreSQL</li><li>SQLAlchemy</li><li>async Python (asyncio / Trio)</li><li>GCP Cloud Run</li><li>GitHub Actions CI/CD</li><li>Docker</li></ul></div>
+      <div class="skill"><h3>Networking</h3><ul class="chips"><li>P2P networking (libp2p)</li><li>GossipSub</li><li>WebRTC</li><li>WebSockets</li></ul></div>
+    </div>
+
+    <p class="section-title">Education</p>
+    <ul class="edu">
+      <li class="card">
+        <h3>National Taiwan University</h3>
+        <p class="role">M.S., Computer Science and Information Engineering · 2014–2016</p>
+        <p class="what">Thesis: <em>Android Dynamic Framework: Native Hook Mechanism in Bionic Linker</em> (NTU–MediaTek industry–academia program).</p>
+        <p class="what">Patent: <a href="https://patents.google.com/patent/TWI649694B/zh">Taiwan patent TWI649694B</a>, co-inventor (assignees MediaTek Inc. and National Taiwan University); the thesis work is part of this patent.</p>
+        <p class="role">B.S., Computer Science and Information Engineering · 2010–2014</p>
+      </li>
+    </ul>
+  </section>
+
+  <footer>© 2026 Kevin (Mai-Hsuan) Chia</footer>
+</main>
+
+<script>
+(() => {
+  document.body.classList.remove("no-js");
+
+  // Assemble the address at runtime so it never appears verbatim in the HTML.
+  const email = document.getElementById("email");
+  const addr = email.dataset.user + "@" + email.dataset.domain;
+  email.href = "mailto:" + addr;
+  email.querySelector("span").textContent = addr;
+  const tabs = [...document.querySelectorAll('[role="tab"]')];
+  const ids = tabs.map(t => t.getAttribute("aria-controls"));
+
+  function select(id, focus) {
+    if (!ids.includes(id)) id = ids[0];
+    tabs.forEach(t => {
+      const on = t.getAttribute("aria-controls") === id;
+      t.setAttribute("aria-selected", on);
+      t.tabIndex = on ? 0 : -1;
+      document.getElementById(t.getAttribute("aria-controls")).hidden = !on;
+      if (on && focus) t.focus();
+    });
+  }
+
+  tabs.forEach((t, i) => {
+    t.addEventListener("click", () => {
+      history.replaceState(null, "", "#" + ids[i]);
+      select(ids[i]);
+    });
+    t.addEventListener("keydown", e => {
+      const step = { ArrowRight: 1, ArrowLeft: -1 }[e.key];
+      if (!step) return;
+      const next = (i + step + tabs.length) % tabs.length;
+      history.replaceState(null, "", "#" + ids[next]);
+      select(ids[next], true);
+    });
+  });
+
+  window.addEventListener("hashchange", () => select(location.hash.slice(1)));
+  select(location.hash.slice(1));
+})();
+</script>
+</body>
+</html>
